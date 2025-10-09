@@ -1,0 +1,161 @@
+body {
+  background-color: #e8d5eb;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #c097c7;
+  padding: 25px;
+  margin: -10px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 60px;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+}
+
+/* Navigacija */
+nav {
+  margin-top: 15px;
+  text-align: center;
+}
+
+nav a {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: white;
+  color: #c097c7;
+}
+
+/* Paragrafi i tekst */
+p {
+  font-family: Arial, sans-serif;
+}
+
+p.small {
+  font-size: 20px;
+}
+
+p.medium {
+  font-size: 25px;
+}
+
+p.big {
+  font-size: 35px;
+}
+
+/* Liste */
+ol, ul {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Slike */
+img {
+  margin: 10px;
+  border-radius: 5px;
+}
+
+/* Linkovi */
+a {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+/* Paneli (osnovni) */
+div.panel {
+  border: 3px solid #aaa;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 80%;
+  box-sizing: border-box;
+}
+
+/* Paneli za recepte (slika + tekst poravnati) */
+div.panel.recept {
+  display: flex;
+  align-items: center;   /* centriranje slike i teksta po visini */
+  justify-content: space-between;
+}
+
+/* Naslovi u panelima */
+div.panel h1 {
+  color: #c097c7;
+  margin-top: 0;
+}
+
+/* Slike unutar recept panela */
+div.panel.recept img {
+  width: 350px;
+  margin-left: 20px;
+  border-radius: 10px;
+  flex-shrink: 0;  /* da slika ne bude stisnuta */
+}
+
+/* Forme */
+form {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+
+input, select, button, textarea {
+  margin: 5px 0;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+footer {
+  background-color: #855987;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+footer p {
+  color: white;
+  margin: 5px 0;
+}
+
+body, p, h1, h2, h3, a, input, textarea, li, ol, ul, footer {
+  font-family: 'Poppins', Arial, sans-serif !important;
+}
+/* Kontakt panel – centriran sadržaj */
+div.panel.kontakt {
+  text-align: center;
+}
+
+/* Kontakt forma – polja centrirana i uža */
+div.panel.kontakt form {
+  display: inline-block;
+  text-align: left; /* da label i inputi budu poravnati jedan ispod drugog */
+  max-width: 400px;
+  width: 100%;
+}
+
