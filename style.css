@@ -1,0 +1,7 @@
+/* vrlo kratko, čitljivo */
+:root { --font: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { font-family: var(--font); }
+header p { max-width: 840px; margin-inline: auto; }
+
+/* sitno naglašavanje kartica pri hoveru */
+.card:hover { transform: translateY(-2px); transition: transform .15s ease; }
