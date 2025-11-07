@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recepti — Mini projekat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="pocetna.html">Mini Projekat</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navMain" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="pocetna.html">Početna</a></li>
+          <li class="nav-item"><a class="nav-link" href="pocetna.html#galerija">Galerija</a></li>
+          <li class="nav-item"><a class="nav-link active" href="recepti.html">Recepti</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="o-nama.html">O nama</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-5 bg-light border-bottom">
+    <div class="container">
+      <h1 class="h3 m-0">Recepti</h1>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="h4 m-0">Svi recepti</h2>
+      <input id="searchRecepti" class="form-control w-auto" placeholder="Pretraga recepata…">
+    </div>
+
+    <div id="wrapRecepti" class="row g-4"><!-- Popunjava se iz JS-a ispod --></div>
+  </main>
+
+  <footer class="bg-primary text-white text-center py-4 mt-5">
+    <div class="container small">© 2025 Mini projekat — Recepti</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const recepti = [
+      { title: "Grčka salata", text: "Krastavac, paradajz, masline, feta sir.", img:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/greek-salad-7e6ec57.jpg" },
+      { title: "Špageti bolonjeze", text: "Klasični sos od mljevenog mesa i paradajza.", img:"https://static01.nyt.com/images/2023/12/22/multimedia/as-bolognese-hgwj/as-bolognese-hgwj-superJumbo.jpg" },
+      { title: "Piletina s rižom", text: "Jednostavno jelo za svaki dan.", img:"https://www.averiecooks.com/wp-content/uploads/2017/05/lemonchickenrice-9.jpg" },
+      { title: "Pita krompiruša", text: "Tradicionalno i zauvijek hit.", img:"https://www.coolinarika.com/slika/11196854/image/krompirusapite.jpg" },
+    ];
+
+    const wrap = document.getElementById('wrapRecepti');
+    function render(list) {
+      wrap.innerHTML = list.map((it,i)=>`
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="${it.img}" class="card-img-top" alt="${it.title}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${it.title}</h5>
+              <p class="card-text flex-grow-1">${it.text}</p>
+              <a class="btn btn-outline-primary w-100" href="contact.html">Zatraži recept</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+    render(recepti);
+
+    const sr = document.getElementById('searchRecepti');
+    sr.addEventListener('input', e=>{
+      const q = e.target.value.toLowerCase().trim();
+      render(recepti.filter(it => it.title.toLowerCase().includes(q) || it.text.toLowerCase().includes(q)));
+    });
+  </script>
+</body>
+</html>
